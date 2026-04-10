@@ -21,13 +21,16 @@ public class Main {
 
 //        Now that I've gone ahead and made these, let me go ahead and ask the user for the values
         System.out.println("What size sandwich do you want? (Press Enter to confirm): ");
-        try {
-            sandwichSize = scnr.nextLine();
+        sandwichSize = scnr.nextLine();
 
-        } catch (InputMismatchException e){
-            System.out.println("Excuse me? Can you not waste my time, there's a long line.");
-//            Ending the program because the user is being a loser
-            System.exit(1);
+//        Here I will run a conditional for the sandwichPrice
+        if(sandwichSize.equalsIgnoreCase("Regular")){
+            sandwichPrice = 5.45;
+        } else if (sandwichSize.equalsIgnoreCase("Large")) {
+            sandwichPrice = 8.95;
+        } else {
+            System.out.println("Uhhh that wasn't an option dude");
+            return;
         }
 
 //        Here I ask for user's age
@@ -52,15 +55,6 @@ public class Main {
             discount = .20;
         }
 
-//        Here I will run a conditional for the sandwichPrice
-        if(sandwichSize.equalsIgnoreCase("Regular")){
-            sandwichPrice = 5.45;
-        } else if (sandwichSize.equalsIgnoreCase("Large")) {
-            sandwichPrice = 8.95;
-        } else {
-            System.out.println("Uhhh that wasn't an option dude");
-            return;
-        }
 
 //        By now I SHOULD (If i've got a compliant customer) have all the information I need for the calculation, so i'll do that here
         total = sandwichPrice - (sandwichPrice * discount);
