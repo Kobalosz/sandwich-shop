@@ -44,9 +44,9 @@ public class Main {
 //        Just so I can get it out of the way I'll establish the discount here
 
 
-        if (userAge > 17 && userAge < 65){
+        if (userAge >= 18 && userAge < 65){
             discount = 0;
-        } else if (userAge < 17) {
+        } else if (userAge <18) {
             discount = .10;
         } else {
             discount = .20;
@@ -59,6 +59,7 @@ public class Main {
             sandwichPrice = 8.95;
         } else {
             System.out.println("Uhhh that wasn't an option dude");
+            return;
         }
 
 //        By now I SHOULD (If i've got a compliant customer) have all the information I need for the calculation, so i'll do that here
